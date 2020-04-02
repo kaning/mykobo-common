@@ -31,7 +31,7 @@ data class TransactionRequest(
     val to: String,
     val amount: String,
     val comment: String
-) : ValidatingRequest() {
+) : ValidatingRequest(), HttpRequestBody{
     override var validationList = listOf(
         NonEmptyValidator.validate("from", from),
         NonEmptyValidator.validate("to", to),
