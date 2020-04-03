@@ -8,7 +8,9 @@ plugins {
 }
 
 group = "com.mykobo"
-version = "0.0.2"
+version = "0.0.3"
+
+val jodamoneyVersion: String by project
 
 repositories {
     mavenCentral()
@@ -17,6 +19,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("com.fatboyindustrial.gson-jodatime-serialisers:gson-jodatime-serialisers:1.7.0")
+    implementation("org.joda:joda-money:$jodamoneyVersion")
     testImplementation("junit:junit:4.12")
 }
 
