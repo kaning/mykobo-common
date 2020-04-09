@@ -7,12 +7,13 @@ plugins {
     id("org.jetbrains.dokka") version "0.10.0"
 }
 
-group = "com.mykobo"
-version = "0.0.3"
+group = "com.github.kaning"
+version = "0.0.4"
 
 val jodamoneyVersion: String by project
 
 repositories {
+    mavenLocal()
     mavenCentral()
     jcenter()
 }
