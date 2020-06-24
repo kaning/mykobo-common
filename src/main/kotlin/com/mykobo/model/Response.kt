@@ -53,3 +53,9 @@ data class SystemWalletResponse(
     val transactionOutputs: List<String>, // ["TXID outputSum"]
     val transactionInputs: List<String> // ["TXID inputSum"]
 )
+
+data class NewTransactionResponse(
+    val transactionId: String?,
+    val comment: String?,
+    val value: String
+)
