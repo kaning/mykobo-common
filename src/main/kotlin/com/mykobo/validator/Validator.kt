@@ -1,5 +1,6 @@
 package com.mykobo.validator
 
+import java.util.*
 import java.util.regex.Pattern
 
 data class ValidationResult(val valid: Boolean, val message: String? = null)
@@ -90,4 +91,19 @@ object NumberFormatValidator: Validator {
         )
     }
 
+}
+
+object UUIDFormatValidator: Validator {
+    fun validate(field: String, item: String): ValidationResult {
+        val valid = try {
+            UUID.fromString(item)
+            true
+        } catch (e: Exception) {
+            false
+        }
+        return ValidationResult(
+            valid,
+            if(!valid) "$field is not an acceptable user id" else null
+        )
+    }
 }

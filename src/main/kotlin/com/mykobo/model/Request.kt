@@ -31,7 +31,7 @@ data class TransactionRequest(
     val to: String,
     val amount: String,
     val comment: String
-) : ValidatingRequest(), HttpRequestBody{
+) : ValidatingRequest(), HttpRequestBody {
     override var validationList = listOf(
         NonEmptyValidator.validate("from", from),
         NonEmptyValidator.validate("to", to),
@@ -70,5 +70,14 @@ data class CreateCryptoOrderRequest(val reference: String, val btcAddress: Strin
         listOf(
             NonEmptyValidator.validate("reference", reference),
             NonEmptyValidator.validate("btcAddress", btcAddress)
+        )
+}
+
+data class NewWalletRequest(
+    val ownerId: String
+) : ValidatingRequest(), Serializable {
+    override var validationList: List<ValidationResult> =
+        listOf(
+            UUIDFormatValidator.validate("ownerId", ownerId)
         )
 }

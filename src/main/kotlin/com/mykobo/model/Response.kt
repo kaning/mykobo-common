@@ -42,7 +42,7 @@ data class TransactionCreatedResponse(val id: UUID, val configId: Int?, val mess
 
 data class TransactionUpdatedResponse(val id: UUID, val message: String) : Serializable
 
-data class SystemWalletResponse(
+data class HdWalletResponse(
     val id: String,
     val issuedReceiveAddresses: List<String>,
     val watchedAddresses: List<String>,

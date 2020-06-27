@@ -1,5 +1,4 @@
 import org.gradle.jvm.tasks.Jar
-import org.jetbrains.dokka.gradle.DokkaTask
 
 plugins {
     `maven-publish`
@@ -8,7 +7,7 @@ plugins {
 }
 
 group = "com.github.kaning"
-version = "0.0.5"
+version = "0.0.6"
 
 val jodamoneyVersion: String by project
 
@@ -54,6 +53,7 @@ publishing {
         }
     }
     repositories {
+        mavenLocal()
         maven {
             url = uri("$buildDir/repository")
         }
