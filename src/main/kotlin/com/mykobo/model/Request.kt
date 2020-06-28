@@ -78,7 +78,7 @@ data class NewWalletRequest(
 ) : ValidatingRequest(), Serializable, HttpRequestBody {
     override var validationList: List<ValidationResult> =
         listOf(
-            UUIDFormatValidator.validate("ownerId", ownerId)
+            NonEmptyValidator.validate("ownerId", ownerId)
         )
 }
 

@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.kaning"
-version = "0.0.7"
+version = "0.0.8"
 
 val jodamoneyVersion: String by project
 
